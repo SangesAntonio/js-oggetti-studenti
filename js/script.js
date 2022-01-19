@@ -38,36 +38,37 @@ button.addEventListener('click', function () {
 
 //creo array di oggetti di studenti
 const listaStudenti=[
-    {
-        studente:[{
+    
+        {
             nome: 'rosa', 
             cognome: 'martinelli', 
             età:'23',
-        }],
-        studente:[{
+        },
+        {
             nome: 'Giustino',
              cognome: 'Leone', 
              età:'78'
-        }],
-        studente:[{
+        },
+        {
             nome: 'Butcher', 
             cognome: 'Ren', 
             età:'48'
-        }],
-        studente:[{
+        },
+        {
             nome: 'HomeLander', 
             cognome: 'usa', 
             età:'40'
-        }],
+        },
 
-}];
+];
 
 console.table(listaStudenti)
 
 //ciclare su gli studenti 
-for(let i = 0; i=listaStudenti.length; i++){
-    let studentList=listaStudenti[i];
-    console.log(studentList.nome)
+for(let i = 0; i<listaStudenti.length; i++){
+
+    let student=listaStudenti[i];
+    console.log(student.nome);
 }
 
 
