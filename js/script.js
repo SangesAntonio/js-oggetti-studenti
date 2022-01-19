@@ -13,12 +13,13 @@ Usiamo il DOM per stampare e chiedere le informazioni all'utente!
 const button=document.getElementById('button');
 const inputText=document.getElementById('input-text');
 const text=document.getElementById('output');
+
+
 //creo un oggetto per descrivere lo studente
 const studente ={
     nome: 'antonio',
     cognome: 'sanges',
     età: '25',
-
 }
 
 console.log(studente)
@@ -26,10 +27,42 @@ console.log(studente)
 button.addEventListener('click', function () {
     let print=' ';
     for(let key in studente){
-        
         print += studente[key] + ' ';
-        text.innerText=print
-
+        text.innerText=`: ${print}`
         console.log(studente[key])
     }
 })
+
+//!seconda parte
+
+//creo array di oggetti di studenti
+const listaStudenti=[
+    {
+        studente:[{
+            nome: 'rosa', 
+            cognome: 'martinelli', 
+            età:'23',
+        }],
+        studente:[{
+            nome: 'Giustino',
+             cognome: 'Leone', 
+             età:'78'
+        }],
+        studente:[{
+            nome: 'Butcher', 
+            cognome: 'Ren', 
+            età:'48'
+        }],
+        studente:[{
+            nome: 'HomeLander', 
+            cognome: 'usa', 
+            età:'40'
+        }],
+
+}];
+
+console.table(listaStudenti)
+
+
+
+
