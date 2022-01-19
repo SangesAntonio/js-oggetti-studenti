@@ -9,3 +9,27 @@ BONUS:
 Usiamo il DOM per stampare e chiedere le informazioni all'utente!
 */
 
+//elementi del DOm
+const button=document.getElementById('button');
+const inputText=document.getElementById('input-text');
+const text=document.getElementById('output');
+//creo un oggetto per descrivere lo studente
+const studente ={
+    nome: 'antonio',
+    cognome: 'sanges',
+    età: '25',
+
+}
+
+console.log(studente)
+//stampo in pagina le propietà
+button.addEventListener('click', function () {
+    let print=' ';
+    for(let key in studente){
+        
+        print += studente[key] + ' ';
+        text.innerText=print
+
+        console.log(studente[key])
+    }
+})
