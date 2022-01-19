@@ -13,6 +13,7 @@ Usiamo il DOM per stampare e chiedere le informazioni all'utente!
 const button=document.getElementById('button');
 const inputText=document.getElementById('input-text');
 const text=document.getElementById('output');
+const textSecond=document.getElementById('output-due');
 
 
 //creo un oggetto per descrivere lo studente
@@ -63,6 +64,11 @@ const listaStudenti=[
 
 console.table(listaStudenti)
 
+//ciclare su gli studenti 
+for(let i = 0; i=listaStudenti.length; i++){
+    let studentList=listaStudenti[i];
+    console.log(studentList.nome)
+}
 
 
 
