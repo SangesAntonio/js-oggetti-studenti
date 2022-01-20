@@ -11,7 +11,9 @@ Usiamo il DOM per stampare e chiedere le informazioni all'utente!
 
 //elementi del DOm
 const button=document.getElementById('button');
-const inputText=document.getElementById('input-text');
+const inputName=document.getElementById('input-name');
+const inputSurname=document.getElementById('input-secondName');
+const inputEta=document.getElementById('input-eta');
 const text=document.getElementById('output');
 const textSecond=document.getElementById('output-due');
 
@@ -29,7 +31,7 @@ button.addEventListener('click', function () {
     let print=' ';
     for(let key in studente){
         print += studente[key] + ' ';
-        text.innerText=`: ${print}`
+        text.innerText=` ${print}`
         console.log(studente[key])
     }
 })
@@ -38,7 +40,6 @@ button.addEventListener('click', function () {
 
 //creo array di oggetti di studenti
 const listaStudenti=[
-    
         {
             nome: 'rosa', 
             cognome: 'martinelli', 
@@ -59,17 +60,56 @@ const listaStudenti=[
             cognome: 'usa', 
             età:'40'
         },
-
 ];
 
-console.table(listaStudenti)
+
 
 //ciclare su gli studenti 
-for(let i = 0; i<listaStudenti.length; i++){
+button.addEventListener('click', function (){
 
-    let student=listaStudenti[i];
-    console.log(student.nome);
-}
+    
+    //aggiungere un nuovo oggetto
+    const newName = inputName.value;
+    const newSecondName = inputSurname.value;
+    const newEta = inputEta.value;
+
+    if(!newName && !newSecondName && !isNaN(newEta)){
+        let printName='';
+        for(let i = 0; i<listaStudenti.length; i++){
+        let students=listaStudenti[i];
+        
+        printName += `<ul><li> ${students.nome} ${students.cognome}</li></ul>`;
+        console.log(printName);
+        
+        //stampo in pagina
+        textSecond.innerHTML= printName;
+    
+        }
+    }else{
+        //creo lista 
+        listaStudenti.push({
+            nome: newName,
+            cognome:newSecondName,
+            età:newEta,
+        })
+        
+        let printName='';
+        for(let i = 0; i<listaStudenti.length; i++){
+        let students=listaStudenti[i];
+        
+        printName += `<ul><li> ${students.nome} ${students.cognome}</li></ul>`;
+        console.log(printName);
+        
+        //stampo in pagina
+        textSecond.innerHTML= printName;
+        }
+    }
+    console.table(listaStudenti)
+    
+    
+    
+    
+})
 
 
 
